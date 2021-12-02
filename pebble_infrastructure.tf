@@ -85,3 +85,7 @@ resource "aws_instance" "web-app" {
     volume_size = var.instance_volume_size_gb
   }
 }
+
+output "ec2_web-app_ip" {
+  value = ["${aws_instance.web-app.public_ip}"]
+}
